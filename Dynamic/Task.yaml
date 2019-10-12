@@ -14,9 +14,9 @@
         state: restarted    
     - name: Install firewalld 
       yum:
-      name: firewalld
-      state: latest   
+        name: firewalld
+        state: latest   
     - name: Intall telnet  
       yum:
-      name: telnet
-      state: latest
+        name: telnet
+        state: latest
