@@ -6,5 +6,5 @@
   tasks: 
     - name: Download woedpress
       get_url:
-      url: "https://wordpress.org/latest.zip"
-      dest: /tmpt/
+        url: "https://wordpress.org/latest.zip"
+        dest: /tmpt/
