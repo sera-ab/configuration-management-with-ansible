@@ -12,5 +12,6 @@
        unarchive:
          src: /tmp/wordpress-5.2.3.zip
          dest: /tmp
+         remote_src: yes
        ignore_errors: true  
   
