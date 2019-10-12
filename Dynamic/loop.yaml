@@ -8,11 +8,11 @@
       package:
         name: "{{item}}"
         state: present
-      with items:
+      with_items:
         - telnet
         - lftp
         - firewalld
         - curl
         - gzip
         - httpd
-        - sshd
+        - openssh-server
