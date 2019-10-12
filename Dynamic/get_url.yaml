@@ -8,6 +8,10 @@
       get_url:
         url: "https://wordpress.org/latest.zip"
         dest: /tmp/
+    - name: install unzip
+      package:
+        name: unzip
+        state: present
     -  name: unzip
        unarchive:
          src: /tmp/wordpress-5.2.3.zip
