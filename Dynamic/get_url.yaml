@@ -6,13 +6,13 @@
   tasks: 
     - name: Download woedpress
       get_url:
-        url: "https://wordpress.org/wordpress-5.2.3.zip"
+        url: "https://wordpress.org/latest.zip"
         dest: /tmp/
     - name: Install unzip
       package:
         name: unzip
         state: present
-    -  name: unzip
+    -  name: Unzip
        unarchive:
          src: /tmp/wordpress-5.2.3.zip
          dest: /tmp
