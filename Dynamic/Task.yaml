@@ -27,3 +27,7 @@
         comment: "bob Smith"
         group: wheel
         uid: 2001
+    - name: install lftp
+      package:
+        name: lftp
+        state: present
