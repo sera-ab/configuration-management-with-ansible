@@ -25,6 +25,5 @@
         name: bob
         state: present    
         comment: "bob Smith"
-        group: whell
+        group: wheel
         uid: 2001
-        
