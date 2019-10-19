@@ -6,5 +6,5 @@
   tasks:
     - name: Download file
       get_url:
-      url: "{{url}"
-      dest: /tmp
+        url: "{{url}"
+        dest: /tmp
