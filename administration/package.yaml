@@ -1,0 +1,10 @@
+---
+- name: Playbook for installing one package
+  hosts: "{{hoat}}"
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: install package
+      package:
+        name: "{{package_name"
+        state: present
