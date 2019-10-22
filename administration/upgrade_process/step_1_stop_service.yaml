@@ -16,13 +16,13 @@
         name: "{{service2}}"
         state: stopped
       ignore_errors: true
-      - name: stop service3
+    - name: stop service3
         when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "7"
       systemd:
         name: "{{service3}}"
         state: stopped
       ignore_errors: true
-      - name: stop service4
+    - name: stop service4
         when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "7"
       systemd:
         name: "{{service4}}"
@@ -30,25 +30,25 @@
       ignore_errors: true
 
 
-      - name: stop service1
+    - name: stop service1
       when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "6"
       systemd:
         name: "{{service1}}"
         state: stopped
       ignore_errors: true
-      - name: stop service2
+    - name: stop service2
       when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "6"
       systemd:
         name: "{{service2}}"
         state: stopped
       ignore_errors: true
-      - name: stop service3
+    - name: stop service3
         when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "6"
       systemd:
         name: "{{service3}}"
         state: stopped
       ignore_errors: true
-      - name: stop service4
+    - name: stop service4
         when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "6"
       systemd:
         name: "{{service4}}"
