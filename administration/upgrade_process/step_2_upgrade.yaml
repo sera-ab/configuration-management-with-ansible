@@ -1,9 +1,9 @@
 ---
-- name: Playbook for upgrading kernel
+- name: Playbook for Upgrading kernel
   hosts: "{{host}}"
   become: yes
   become_method: sudo
-  tasks: 
+  tasks:
     - name: register
       shell: uname -r
       register: message
@@ -12,7 +12,8 @@
       debug:
         msg: "{{message}}"
 
-    - name: upgrade kernel
+
+    - name: upgrading kernel
       package:
         name: kernel
         state: latest
@@ -20,14 +21,14 @@
     - name: Reboot
       shell: "shutdown -r now"
 
-    - name: wait 600 seconds for target connection to become reachable/usable
+    - name: Wait 600 seconds for targert connection to become reachable/usable
       wait_for_connection:
         delay: 60
         timeout: 300
 
-   - name: register
-     shell: uname -r
-     register: message
+    - name: register
+      shell: uname -r
+      register: message
 
     - name: Debug
       debug:
