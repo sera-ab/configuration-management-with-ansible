@@ -1,0 +1,15 @@
+---
+- name: Playbook for provisioning 
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  tasks:
+    - ec2:
+        key_name: Anisble_key
+        instance_type: "{{instance_type}}"
+        image: ami-04cf43aca3e6f3de3
+        wait: yes
+        group: webserver
+        count: "{{count}}"
+        vpc_subnet_id: "{{ypc_subnet_id}}}"
+        assign_public_ip: yes
