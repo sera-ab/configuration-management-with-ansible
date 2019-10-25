@@ -10,6 +10,6 @@
         instance_type: "{{instance_type}}"
         image: "{{image}}"
         count: "{{count}}"
-        vpc_subnet_id: "{{vpc_subnet_id}}}"
+        vpc_subnet_id: "{{vpc_subnet_id}}"
         assign_public_ip: yes
         region: "{{region}}"
