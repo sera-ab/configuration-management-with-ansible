@@ -8,4 +8,4 @@
     - ec2:
         instance _ids: "{{instance_ids}}"
         state: "{{state}}"
-        region: "{{region}}
+        region: "{{region}}"
