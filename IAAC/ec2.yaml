@@ -1,8 +1,9 @@
 ---
 - name: Playbook for provisioning 
   hosts: localhost
-  become: yes
-  become_method: sudo
+  connection: local
+  gather_facts: false
+  become: false
   tasks:
     - ec2:
         key_name: Anisble_key
