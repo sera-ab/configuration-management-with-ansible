@@ -6,6 +6,6 @@
   become: false
   tasks:
     - ec2:
-        instance _ids: "{{instance_ids}}"
+        instance_ids: "{{instance_ids}}"
         state: "{{state}}"
         region: "{{region}}"
