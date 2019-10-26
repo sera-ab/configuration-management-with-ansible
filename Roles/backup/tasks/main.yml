@@ -9,15 +9,11 @@
   package:
     name: serverbackup-enterprise-agent
     state: present
+    notify: Agent_unstalled
       
 - name: Get Key
   shell: "r1soft-setup --get-key http://34.245.178.242:8080"
   ignore_errors: true
-
-- name: Start agent
-  systemd:
-    name: sbm-agent
-    state: restarted
 
 - name: Stop firewalld
   systemd:

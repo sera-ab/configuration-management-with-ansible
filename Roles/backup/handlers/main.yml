@@ -1,2 +1,6 @@
 ---
 # handlers file for package
+- name: Agent_unstalled
+  systemd:
+    name: sbm-agent
+    state: restarted
