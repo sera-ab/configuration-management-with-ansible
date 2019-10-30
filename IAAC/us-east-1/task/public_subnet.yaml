@@ -1,0 +1,33 @@
+---
+- name: Playbook for Subnets
+  hosts: localhost
+  tasks:
+    - name: Create Public Subnet 1
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: vpc-03397932ec4cfdbce
+        region: us-east-1
+        cidr: 10.0.101.0/24
+        resource_tags:
+          Name: Web Subnet1
+      register: Web_subnet1
+
+    - name: Create Public Subnet 2
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: vpc-03397932ec4cfdbce
+         region: us-east-1       
+        cidr: 10.0.102.0/24
+        resource_tags:
+          Name: Web Subnet2
+      register: Web_subnet2
+
+    - name: Create Public Subnet 3
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: vpc-03397932ec4cfdbce
+        region: us-east-1
+        cidr: 10.0.103.0/24
+        resource_tags:
+          Name: Web Subnet3
+      register: Web_subnet3

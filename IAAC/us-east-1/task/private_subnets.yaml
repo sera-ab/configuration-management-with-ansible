@@ -1,0 +1,32 @@
+---
+- name: Playbook for subnets
+  hosts: localhost
+  tasks:
+    - name: Create private subnet1
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: vpc-7edfcf15
+        cidr: 10.0.1.0/24
+        resource_tags:
+          Name: Database Subnet
+        register: database_subnet
+
+    - name: Create private subnet2
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: vpc-7edfcf15
+        region: us-east-1
+        cidr: 10.0.1.0/24
+        resource_tags:
+          Name: Database Subnet
+        register: database_subnet
+
+    - name: Create private subnet3
+      ec2_vpc_subnet:
+        state: present
+        vpc_id: vpc-7edfcf15
+        region: us-east-1
+        cidr: 10.0.1.0/24
+        resource_tags:
+          Name: Database Subnet
+        register: database_subnet
