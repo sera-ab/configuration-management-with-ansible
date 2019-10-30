@@ -19,20 +19,19 @@
 
 - name: Download wordpress package
   get_url:
-    url: "https://wordpress.org/wordpress-${{wordpress_version}}.tar.gz"
+    url: "https://wordpress.org/wordpress-{{wordpress_version}}.tar.gz"
     dest: /tmp/
 
 - name: Unzip wordpress file
   unarchive:
-    src: "/tmp/wordpress-${{wordpress_version}}.tar.gz"
+    src: "/tmp/wordpress-{{wordpress_version}}.tar.gz"
     dest: /var/www/html/
     remote_src: yes
-    become: yes
-    become_method: sudo
+  become: yes
+  become_method: sudo
 
 - name: Move files to html folder
   shell: "mv /var/www/html/wordpress/*  /var/www/html/"
   become: yes
   become_method: sudo
   ignore_errors: yes
-      
