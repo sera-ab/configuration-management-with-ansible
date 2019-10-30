@@ -1,0 +1,13 @@
+---
+- name: Playbook for VPC
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: VPC for class
+      ec2_vpc_net:
+        name: TaskVPC
+        cidr_block: 10.0.0.0/16
+        region: us-east-1
+        tags:
+          Class: Ansible
+          Task: VPC

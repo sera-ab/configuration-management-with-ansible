@@ -1,0 +1,19 @@
+  ---
+- name: Playbook for Route table
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Set up public subnet route table
+      ec2_vpc_route_table:
+        vpc_id: vpc-03397932ec4cfdbce
+        region: us-east-1
+        tags:
+          Name: Public
+        subnets:
+          - subnet-0b29a314c94cab3f5
+          - subnet-07d4e999fd2964530
+          - subnet-00c07395b4d1f031e
+        routes:
+          - dest: 0.0.0.0/0
+            gateway_id: igw-02b1c2836b61d22e9
+      register: public_route_table
