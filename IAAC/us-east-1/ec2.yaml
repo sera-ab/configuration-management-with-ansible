@@ -1,5 +1,5 @@
 ---
-- name: Playbook for provisioning 
+- name: Playbook for Provisioning
   hosts: localhost
   connection: local
   gather_facts: false
