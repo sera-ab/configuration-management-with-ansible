@@ -3,9 +3,17 @@
   hosts: localhost
   gather_facts: no
   tasks:
+    - name: collect VPC info
+      ec2_vpc_net_facts: 
+        region: us-east-1
+        filters: 
+          "tag:Task": VPC
+        register: VPC1
+
+
     - name: Set up public subnet route table
       ec2_vpc_route_table:
-        vpc_id: vpc-03397932ec4cfdbce
+        vpc_id: "{{VPC1.vpcs[0].vpc_id}}"
         region: us-east-1
         tags:
           Name: Public
