@@ -9,7 +9,7 @@
         image_id: ami-02eac2c0129f6376b
         key_name: ansible-tower-key
         region: us-east-1
-        security_groups: sg-06afc288dd4d94142
+        security_groups: "{{SecGroup.group_id}}"
         instance_type: t2.micro
         assign_public_ip: yes
 
@@ -23,7 +23,7 @@
         min_size: 3
         max_size: 48
         desired_capacity: 3
-        vpc_zone_identifier: [ 'subnet-0b29a314c94cab3f5', 'subnet-07d4e999fd2964530', 'subnet-00c07395b4d1f031e' ]
+        vpc_zone_identifier: [ "{{Web_subnet1.subnet.id}}", "{{Web_subnet2.subnet.id}}", "{{Web_subnet3.subnet.id}}" ]
         region: us-east-1
         tags:
           - Name: WebServer
